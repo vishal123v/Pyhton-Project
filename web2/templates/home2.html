@@ -1,0 +1,41 @@
+<html>
+<head>
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="./static/css/bootstrap.min.css">
+  	<script src="./static/js/bootstrap.min.js"></script>
+
+  	<link rel="stylesheet" href="./static/css/bootstrap-theme.min.css" >
+
+	<!-- Latest compiled and minified JavaScript -->
+	<title>home</title>
+
+</head>
+<body>
+
+<div class="container">
+
+	<div class="jumbotron">
+		<h1>PELE</h1>
+	</div>
+
+	<form action="/" method="post">
+		<h3>User name:</h3> <input type="text" name="username"><br>
+		<h3>Password:</h3> <input type="text" name="pwd"><br>
+		<input type="submit" value="Submit" >
+	</form>
+</div>
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+    
+    {% for message in messages %}
+    	<div class="alert alert-danger">
+    	<a href="/" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+      {{ message }}
+      </div>
+      
+    {% endfor %}
+    
+  {% endif %}
+{% endwith %}
+</body>
+</html>
