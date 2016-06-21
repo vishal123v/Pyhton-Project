@@ -19,10 +19,19 @@ def home():
 
 @app.route('/table')
 def table():
-
-	date,value =db.get()
+	try:
+		date,value =db.get()
+	except Exception,e:
+		date="table empty"
+		value=-1
+		print e 
 	return render_template('table2.html',date=date,value=value)  
 
 if __name__ == '__main__':
-	
+	try:
+		db.create_table()
+	except Exception, e:
+		print e
+
 	app.run('0.0.0.0',debug=True)
+	

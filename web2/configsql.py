@@ -11,6 +11,7 @@ class database():
 		con.close()
 
 	def insert(self,date,value):
+		#print "insert function"
 		con=sqlite3.connect('database.db')
 		con.execute("INSERT INTO Table1(date,value)\
 		VALUES(?,?);",(date,value))
@@ -18,7 +19,7 @@ class database():
 		con.close()
 	def get(self):
 		con=sqlite3.connect('database.db')
-		cur=con.execute("SELECT * FROM Table1 ORDER BY date DESC LIMIT 1")
+		cur=con.execute("SELECT * FROM table1 ORDER BY date DESC LIMIT 1")
 		for data in cur:
 			date=data[1]
 			value=data[2]
