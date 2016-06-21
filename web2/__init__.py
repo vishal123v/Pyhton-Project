@@ -1,5 +1,7 @@
 from flask import Flask,render_template,redirect,request,flash
 import time as dt
+from configsql import db
+
 app=Flask(__name__)
 app.secret_key='This is my page'
 
@@ -17,8 +19,10 @@ def home():
 
 @app.route('/table')
 def table():
-	var=dt.strftime('%l:%M:%S %p %b %d, %Y')
-	return render_template('table2.html',var=var)  
+
+	date,value =db.get()
+	return render_template('table2.html',date=date,value=value)  
 
 if __name__ == '__main__':
+	
 	app.run('0.0.0.0',debug=True)
