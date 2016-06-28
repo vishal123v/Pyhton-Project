@@ -10,7 +10,7 @@ class database():
 			temp INT);")
 		con.close()
 
-	def insert(self,date,value):
+	def insert(self,date,temp):
 		#print "insert function"
 		con=sqlite3.connect('database.db')
 		con.execute("INSERT INTO Table1(date,temp)\

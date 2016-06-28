@@ -4,9 +4,9 @@ from time import sleep
 import sys
 
 s=socket.socket()
-host='192.168.1.8'
-port=12345
-s.bind(('192.168.1.8',port))
+host='127.0.0.1'
+port=1234
+s.bind(('127.0.0.1',port))
 s.listen(1)
 print "waiting for connection "
 c,addr=s.accept()

@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'proj.ui'
 #
-# Created: Mon Jun 27 15:05:39 2016
+# Created: Tue Jun 28 16:40:36 2016
 #      by: PyQt4 UI code generator 4.10.4
 #
 # WARNING! All changes made in this file will be lost!
@@ -26,37 +26,30 @@ except AttributeError:
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName(_fromUtf8("MainWindow"))
-        MainWindow.resize(563, 496)
+        MainWindow.resize(424, 402)
         self.centralwidget = QtGui.QWidget(MainWindow)
         self.centralwidget.setObjectName(_fromUtf8("centralwidget"))
         self.table1 = QtGui.QTableWidget(self.centralwidget)
-        self.table1.setGeometry(QtCore.QRect(110, 140, 301, 171))
+        self.table1.setGeometry(QtCore.QRect(110, 140, 201, 171))
         self.table1.setObjectName(_fromUtf8("table1"))
-        self.table1.setColumnCount(3)
+        self.table1.setColumnCount(2)
         self.table1.setRowCount(0)
         item = QtGui.QTableWidgetItem()
         self.table1.setHorizontalHeaderItem(0, item)
         item = QtGui.QTableWidgetItem()
         self.table1.setHorizontalHeaderItem(1, item)
-        item = QtGui.QTableWidgetItem()
-        self.table1.setHorizontalHeaderItem(2, item)
         self.table2 = QtGui.QTableWidget(self.centralwidget)
-        self.table2.setGeometry(QtCore.QRect(110, 50, 301, 61))
+        self.table2.setGeometry(QtCore.QRect(110, 50, 201, 61))
         self.table2.setObjectName(_fromUtf8("table2"))
-        self.table2.setColumnCount(3)
+        self.table2.setColumnCount(2)
         self.table2.setRowCount(0)
         item = QtGui.QTableWidgetItem()
         self.table2.setHorizontalHeaderItem(0, item)
         item = QtGui.QTableWidgetItem()
         self.table2.setHorizontalHeaderItem(1, item)
-        item = QtGui.QTableWidgetItem()
-        self.table2.setHorizontalHeaderItem(2, item)
-        self.Button1 = QtGui.QPushButton(self.centralwidget)
-        self.Button1.setGeometry(QtCore.QRect(220, 330, 85, 26))
-        self.Button1.setObjectName(_fromUtf8("Button1"))
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtGui.QMenuBar(MainWindow)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 563, 25))
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 424, 25))
         self.menubar.setObjectName(_fromUtf8("menubar"))
         MainWindow.setMenuBar(self.menubar)
         self.statusbar = QtGui.QStatusBar(MainWindow)
@@ -67,18 +60,13 @@ class Ui_MainWindow(object):
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def retranslateUi(self, MainWindow):
-        MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow", None))
+        MainWindow.setWindowTitle(_translate("MainWindow", "APP", None))
         item = self.table1.horizontalHeaderItem(0)
-        item.setText(_translate("MainWindow", "SL.no", None))
-        item = self.table1.horizontalHeaderItem(1)
         item.setText(_translate("MainWindow", "Date", None))
-        item = self.table1.horizontalHeaderItem(2)
+        item = self.table1.horizontalHeaderItem(1)
         item.setText(_translate("MainWindow", "Temperature", None))
         item = self.table2.horizontalHeaderItem(0)
-        item.setText(_translate("MainWindow", "SL.no", None))
-        item = self.table2.horizontalHeaderItem(1)
         item.setText(_translate("MainWindow", "Date", None))
-        item = self.table2.horizontalHeaderItem(2)
+        item = self.table2.horizontalHeaderItem(1)
         item.setText(_translate("MainWindow", "Temperature", None))
-        self.Button1.setText(_translate("MainWindow", "ok", None))
 
