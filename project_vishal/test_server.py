@@ -10,7 +10,7 @@ except sqlite3.OperationalError, e:
 	print e
 def send_show():
 	s1=socket.socket()
-	s1.bind(("127.0.0.1",12345))
+	s1.bind(("192.168.1.8",12345))
 	s1.listen(1)
 	cl1,ip1=s1.accept()
 	try:
