@@ -1,7 +1,7 @@
 import socket
 from time import strftime
 s=socket.socket()
-s.connect(("192.168.1.12",1234))
+s.connect(("192.168.1.8",1234))
 def send():
 	global s
 	while 1:
