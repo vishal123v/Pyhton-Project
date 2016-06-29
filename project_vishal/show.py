@@ -11,7 +11,7 @@ class main_Thread(QtCore.QThread):
 	def __init__(self,parent=None):
 		QtCore.QThread.__init__(self,parent)
 		self.s1=socket.socket()
-		self.s1.connect(("192.168.1.8",12345))
+		self.s1.connect(("127.0.0.1",12345))
 		self.signal = QtCore.SIGNAL("signal")
 	def run(self):
 		print "in run main_Thread"
