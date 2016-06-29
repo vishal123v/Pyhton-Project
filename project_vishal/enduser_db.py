@@ -24,10 +24,21 @@ class database():
 	def get(self):
 		con=sqlite3.connect('enduser_db.db')
 		cur=con.execute("SELECT * FROM table1 ORDER BY date DESC LIMIT 1")
+		
 		for data in cur:
 			date=data[1]
 			temp=data[2]
-			return date,temp
 		con.close()
+		return date,temp
+		
+	def get_all(self):
+		con=sqlite3.connect('enduser_db.db')
+		cur=con.execute("SELECT * FROM table1 ORDER BY date DESC ")
+		lst = []
+		for data in cur:
+			lst.append(data)
+		con.close()
+		return lst
+		
 
 db=database()

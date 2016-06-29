@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'proj.ui'
 #
-# Created: Tue Jun 28 16:40:36 2016
+# Created: Wed Jun 29 12:13:11 2016
 #      by: PyQt4 UI code generator 4.10.4
 #
 # WARNING! All changes made in this file will be lost!
@@ -26,11 +26,11 @@ except AttributeError:
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName(_fromUtf8("MainWindow"))
-        MainWindow.resize(424, 402)
+        MainWindow.resize(601, 402)
         self.centralwidget = QtGui.QWidget(MainWindow)
         self.centralwidget.setObjectName(_fromUtf8("centralwidget"))
         self.table1 = QtGui.QTableWidget(self.centralwidget)
-        self.table1.setGeometry(QtCore.QRect(110, 140, 201, 171))
+        self.table1.setGeometry(QtCore.QRect(110, 140, 321, 171))
         self.table1.setObjectName(_fromUtf8("table1"))
         self.table1.setColumnCount(2)
         self.table1.setRowCount(0)
@@ -39,7 +39,7 @@ class Ui_MainWindow(object):
         item = QtGui.QTableWidgetItem()
         self.table1.setHorizontalHeaderItem(1, item)
         self.table2 = QtGui.QTableWidget(self.centralwidget)
-        self.table2.setGeometry(QtCore.QRect(110, 50, 201, 61))
+        self.table2.setGeometry(QtCore.QRect(120, 40, 251, 61))
         self.table2.setObjectName(_fromUtf8("table2"))
         self.table2.setColumnCount(2)
         self.table2.setRowCount(0)
@@ -49,7 +49,7 @@ class Ui_MainWindow(object):
         self.table2.setHorizontalHeaderItem(1, item)
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtGui.QMenuBar(MainWindow)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 424, 25))
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 601, 20))
         self.menubar.setObjectName(_fromUtf8("menubar"))
         MainWindow.setMenuBar(self.menubar)
         self.statusbar = QtGui.QStatusBar(MainWindow)

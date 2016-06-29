@@ -34,15 +34,31 @@ class MyForm(QtGui.QMainWindow):
 		self.t.start()
 		self.ui = Ui_MainWindow()
 		self.ui.setupUi(self)
+		self.ui.table1.horizontalHeader().setResizeMode(QtGui.QHeaderView.Stretch)
+		self.ui.table2.horizontalHeader().setResizeMode(QtGui.QHeaderView.Stretch)
 		self.connect(self.t,self.t.signal,self.table_disp)
+
 
 	def table_disp(self):
 		self.ui.table2.setRowCount(1)
+
+		maxcount=3
 		date1,temp1=db.get()
-				
 		
 		self.ui.table2.setItem(0,0,QtGui.QTableWidgetItem(date1))
 		self.ui.table2.setItem(0,1,QtGui.QTableWidgetItem(str(temp1)))
+		res=db.get_all()
+		i=0
+		self.ui.table1.setRowCount(len(res))
+		for data in res:
+			date=data[1]
+			temp=data[2]
+			print date,temp
+			self.ui.table1.setItem(i,0,QtGui.QTableWidgetItem(date))
+			self.ui.table1.setItem(i,1,QtGui.QTableWidgetItem(str(temp)))
+			i=i+1
+
+
 		
 
 

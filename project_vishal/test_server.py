@@ -3,7 +3,7 @@ import sqlite3
 import threading
 from sql_config import db
 from time import sleep
-
+flag=1
 try:
 	db.create_table()
 except sqlite3.OperationalError, e:
@@ -14,11 +14,20 @@ def send_show():
 	s1.listen(1)
 	cl1,ip1=s1.accept()
 	try:
-		while 1:
-			date1,temp1=db.get()
-			print date1,temp1
-			cl1.send(date1+','+str(temp1))
-			sleep(0.5)
+		tempr='dummy'
+		while flag:
+			try:
+				date1,temp1=db.get()
+				if tempr==date1:
+					continue
+				print date1,temp1
+				cl1.send(date1+','+str(temp1))
+				sleep(0.5)
+				tempr=date1
+			except Exception as e:
+				print "No data in table"
+				sleep(5)
+			
 	finally:
 		s1.close()
 	
@@ -31,14 +40,16 @@ def recv_data():
 	#global cl
 	try:
 		while 1:
+			global flag
 			rec=cl.recv(1024)
 			date,temp=rec.split(',')
 			if temp=='q' :
+				flag=0
 				break
 			db.insert(date,temp)
 			if not rec:
 				break
-			print rec
+			#print rec
 		#sleep()
 	finally:
 		s.close()
