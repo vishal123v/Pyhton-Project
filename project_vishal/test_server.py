@@ -33,7 +33,7 @@ def send_show():
 	
 def recv_data():
 	s=socket.socket()
-	s.bind(("127.0.0.1",1234))
+	s.bind(("192.168.1.8",1234))
 	s.listen(1)
 	cl,ip = s.accept()
 
